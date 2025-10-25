@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Souls Enhancement Suite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-fire"></i>
+                    <h1 data-translate="title">Dark Souls Enhancement Suite</h1>
+                </div>
+                <p class="subtitle" data-translate="subtitle">Complete enhancement manager for Dark Souls</p>
+            </div>
+        </header>
+
+        <div class="tab-container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="registry">
+                    <i class="fas fa-cogs"></i>
+                    <span data-translate="tabRegistry">Registry Fixes</span>
+                </button>
+                <button class="tab-btn" data-tab="fsr">
+                    <i class="fas fa-rocket"></i>
+                    <span data-translate="tabFsr">FSR Overlay - Uniscaler</span>
+                </button>
+                <button class="tab-btn" data-tab="dsfix">
+                    <i class="fas fa-download"></i>
+                    <span data-translate="tabDsfix">Install DSFIX+Reshade</span>
+                </button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Registry Fixes Tab -->
+                <div id="registry-tab" class="tab-panel active">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-wrench"></i> <span data-translate="registryTitle">Registry Fixes</span></h2>
+                        <p data-translate="registrySubtitle">Apply essential fixes for better compatibility</p>
+                    </div>
+                    
+                    <div class="cards-grid">
+                        <div class="feature-card">
+                            <div class="card-icon">
+                                <i class="fab fa-steam"></i>
+                            </div>
+                            <h3 data-translate="steamOverrideTitle">Steam Signature Override</h3>
+                            <p data-translate="steamOverrideDesc">Disables signature verification for Steam mods</p>
+                            <button id="steamOverrideBtn" class="btn btn-primary">
+                                <i class="fas fa-shield-alt"></i>
+                                <span data-translate="steamOverrideBtn">Apply Steam Override</span>
+                            </button>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="card-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h3 data-translate="gpuOverrideTitle">NVIDIA/AMD Signature Override</h3>
+                            <p data-translate="gpuOverrideDesc">Enables signature override for graphics cards</p>
+                            <button id="gpuOverrideBtn" class="btn btn-primary">
+                                <i class="fas fa-display"></i>
+                                <span data-translate="gpuOverrideBtn">Apply GPU Override</span>
+                            </button>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="card-icon">
+                                <i class="fas fa-skull"></i>
+                            </div>
+                            <h3 data-translate="depOverrideTitle">DEP Dark Souls Override</h3>
+                            <p data-translate="depOverrideDesc">Disables DEP for better DSFIX compatibility</p>
+                            <div class="dep-controls">
+                                <button id="scanGamesBtn" class="btn btn-secondary">
+                                    <i class="fas fa-search"></i>
+                                    <span data-translate="scanGamesBtn">Scan Games</span>
+                                </button>
+                                <div id="gamesList" class="games-list"></div>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="card-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3>GFWL vs SteamWorks Guide</h3>
+                            <p>Learn optimal settings for online play</p>
+                            <button id="gfwlHelpBtn" class="btn btn-info">
+                                <i class="fas fa-question-circle"></i>
+                                <span data-translate="gfwlHelpBtn">GFWL vs SteamWorks Guide</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FSR Overlay Tab -->
+                <div id="fsr-tab" class="tab-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-rocket"></i> <span data-translate="fsrTitle">FSR Overlay - Uniscaler Launcher</span></h2>
+                        <p data-translate="fsrSubtitle">Improve performance and visual quality with upscaling</p>
+                    </div>
+                    
+                    <div class="fsr-content">
+                        <div class="feature-card large">
+                            <div class="card-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <h3 data-translate="launchScalerTitle">Lossless Scaling Launcher</h3>
+                            <p data-translate="launchScalerDesc">Run the upscaler with optimized settings</p>
+                            <div class="button-group">
+                                <button id="launchScalerBtn" class="btn btn-success">
+                                    <i class="fas fa-rocket"></i>
+                                    <span data-translate="launchScalerBtn">Launch Scaler</span>
+                                </button>
+                                <button id="fsrHelpBtn" class="btn btn-info">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span data-translate="fsrHelpBtn">Help</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DSFIX+Reshade Tab -->
+                <div id="dsfix-tab" class="tab-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-download"></i> <span data-translate="dsfixTitle">Install DSFIX+Reshade</span></h2>
+                        <p data-translate="dsfixSubtitle">Install visual improvements and fixes automatically</p>
+                    </div>
+                    
+                    <div class="install-content">
+                        <div class="feature-card large">
+                            <div class="card-icon">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                            <h3 data-translate="installTitle">Automatic Installation</h3>
+                            <div id="selectedPath" class="selected-path">
+                                <span data-translate="noPathSelected">No folder selected</span>
+                            </div>
+                            <div class="button-group">
+                                <button id="selectGameFolderBtn" class="btn btn-secondary">
+                                    <i class="fas fa-folder-open"></i>
+                                    <span data-translate="selectFolderBtn">Select Game Folder</span>
+                                </button>
+                                <button id="installDsfixBtn" class="btn btn-primary" disabled>
+                                    <i class="fas fa-download"></i>
+                                    <span data-translate="installBtn">Install DSFIX+Reshade</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="advanced-options">
+                            <h3><i class="fas fa-exclamation-triangle"></i> <span data-translate="advancedTitle">Advanced Options</span></h3>
+                            <div class="warning-cards">
+                                <div class="warning-card">
+                                    <button id="rtgiHelpBtn" class="btn btn-warning">
+                                        <i class="fas fa-radiation"></i>
+                                        <span data-translate="rtgiBtn">How to install experimental RTGI?</span>
+                                    </button>
+                                </div>
+                                <div class="warning-card">
+                                    <button id="fsrTipsBtn" class="btn btn-warning">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <span data-translate="fsrTipsBtn">How to use FSR+120FPS without breaking physics?</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p data-translate="processing">Processing...</p>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Title</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-content" id="modalContent">
+                Modal content
+            </div>
+            <div class="modal-footer">
+                <button id="modalClose" class="btn btn-secondary" data-translate="modalClose">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>

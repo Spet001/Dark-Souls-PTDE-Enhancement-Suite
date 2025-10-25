@@ -1,0 +1,55 @@
+{
+  "name": "dark-souls-enhancement-suite",
+  "version": "2.0.0",
+  "description": "Suite completa de melhorias para Dark Souls - Registry Fixes, FSR Overlay e DSFIX+Reshade",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "node-powershell": "^4.0.0"
+  },
+  "build": {
+    "appId": "com.darksouls.enhancementsuite",
+    "productName": "Dark Souls Enhancement Suite",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*",
+      "!dist/**/*",
+      "!renderer-old.js",
+      "!install-dsfix-old.ps1",
+      "!install-dsfix-broken.ps1"
+    ],
+    "extraResources": [
+      {
+        "from": "../DSFIX+Reshade",
+        "to": "DSFIX+Reshade"
+      },
+      {
+        "from": "../FSR Overlay - Uniscaler",
+        "to": "FSR Overlay - Uniscaler"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
