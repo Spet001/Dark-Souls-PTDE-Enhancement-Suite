@@ -3,23 +3,59 @@ param()
 
 $games = @()
 
-# Lista de jogos conhecidos que usam DSFIX
+# Lista de jogos conhecidos que usam DSFIX (focado em Dark Souls PTDE)
 $gamePatterns = @(
     "*DARK SOULS*",
-    "*DarkSoulsRemastered*",
+    "*DarkSouls*", 
     "*DATA.exe*",
-    "*Dark Souls*"
+    "*Dark Souls*",
+    "*PTDE*",
+    "*Prepare To Die*"
 )
 
 # Locais comuns de instalação
 $searchPaths = @(
+    # Steam paths
     "C:\Program Files (x86)\Steam\steamapps\common",
     "C:\Program Files\Steam\steamapps\common",
+    "C:\Program Files (x86)\Steam\steamapps\common\DARK SOULS Prepare To Die Edition",
+    "C:\Program Files\Steam\steamapps\common\DARK SOULS Prepare To Die Edition",
+    
+    # Games for Windows Live / GFWL paths
+    "C:\Program Files (x86)\Microsoft Games\DARK SOULS Prepare To Die Edition",
+    "C:\Program Files\Microsoft Games\DARK SOULS Prepare To Die Edition",
+    "C:\Program Files (x86)\Games for Windows - LIVE\Games\DARK SOULS",
+    "C:\Program Files\Games for Windows - LIVE\Games\DARK SOULS",
+    
+    # CD-ROM / Default installation paths
+    "C:\Program Files (x86)\FromSoftware\DARK SOULS Prepare To Die Edition",
+    "C:\Program Files\FromSoftware\DARK SOULS Prepare To Die Edition", 
+    "C:\Program Files (x86)\Bandai Namco Games\DARK SOULS Prepare To Die Edition",
+    "C:\Program Files\Bandai Namco Games\DARK SOULS Prepare To Die Edition",
+    "C:\Program Files (x86)\DARK SOULS Prepare To Die Edition",
+    "C:\Program Files\DARK SOULS Prepare To Die Edition",
+    
+    # Custom game directories
     "C:\Games",
-    "D:\Games",
+    "D:\Games", 
     "E:\Games",
+    "F:\Games",
+    "C:\Games\DARK SOULS",
+    "C:\Games\DARK SOULS PTDE",
+    "C:\Games\DARK SOULS Prepare To Die Edition",
+    "D:\Games\DARK SOULS",
+    "D:\Games\DARK SOULS PTDE", 
+    "D:\Games\DARK SOULS Prepare To Die Edition",
+    
+    # Fallback broad search paths
     "C:\Program Files (x86)",
-    "C:\Program Files"
+    "C:\Program Files",
+    
+    # Legacy paths (older installations)
+    "C:\DARK SOULS",
+    "C:\DarkSouls",
+    "D:\DARK SOULS",
+    "D:\DarkSouls"
 )
 
 # Busca no registro do Steam
