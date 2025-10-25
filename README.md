@@ -13,13 +13,33 @@
 
 [Download Latest Release](../../releases) • [Report Bug](../../issues) • [Request Feature](../../issues)
 
+![Main Interface](./dsfix-registry-manager/assets/preview1.png)
+
 </div>
 
 ---
 
-## 📋 Table of Contents
+## �️ Screenshots
+
+<div align="center">
+
+### Registry Fixes Tab
+![Registry Fixes](./dsfix-registry-manager/assets/preview1.png)
+
+### FSR Overlay Launcher
+![FSR Overlay](./dsfix-registry-manager/assets/preview2.png)
+
+### DSFIX+ReShade Installer
+![DSFIX Installer](./dsfix-registry-manager/assets/preview3.png)
+
+</div>
+
+---
+
+##  Table of Contents
 
 - [Overview](#-overview)
+- [Screenshots](#️-screenshots)
 - [Features](#-features)
 - [Installation](#-installation)
 - [Usage Guide](#-usage-guide)
