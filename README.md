@@ -1,133 +1,420 @@
-# Dark Souls Enhancement Suite
+<div align="center">
 
-Uma suite completa de melhorias para Dark Souls, incluindo correções de registro, upscaling FSR e instalação automática de mods visuais.
+# Dark Souls PTDE Enhancement Suite
 
-## 🎮 Funcionalidades
+[![Dark Souls](https://img.shields.io/badge/Dark%20Souls-PTDE-orange.svg)](https://github.com/Spet001/Dark-Souls-PTDE-Enhancement-Suite)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows-blue.svg)](#installation)
+[![Version](https://img.shields.io/badge/Version-2.0.0-red.svg)](../../releases)
 
-### � Registry Fixes
-- **Steam Signature Override**: Desabilita verificação de assinatura para mods Steam
-- **NVIDIA/AMD Signature Override**: Habilita override de assinatura para placas de vídeo
-- **DEP Dark Souls Override**: Desabilita DEP para melhor compatibilidade com DSFIX
-- **Busca Automática**: Encontra automaticamente jogos Dark Souls instalados
-- **Aplicação Segura**: Preserva outras configurações de compatibilidade
+**A comprehensive enhancement suite for Dark Souls: Prepare to Die Edition**
 
-### � FSR Overlay - Uniscaler Launcher
-- **Lossless Scaling**: Executa o upscaler com configurações otimizadas
-- **Frame Generation**: AI-powered frame interpolation
-- **Múltiplas APIs**: Suporte para DirectX 11/12 e Vulkan
-- **Documentação Completa**: Guias detalhados para configuração
+*Registry fixes • FSR upscaling • Visual mods installer • GFWL documentation*
 
-### 💾 Install DSFIX+Reshade
-- **Instalação Automática**: Copia todos os arquivos necessários para o jogo
-- **Backup Automático**: Preserva arquivos originais
-- **Configuração RTGI**: Guia para Ray Tracing experimental
-- **Otimização FSR**: Instruções para 120FPS sem quebrar física
+[Download Latest Release](../../releases) • [Report Bug](../../issues) • [Request Feature](../../issues)
 
-## 🎨 Interface
+</div>
 
-- **Tema Dark Souls**: Background oficial do jogo
-- **Design Moderno**: Interface responsiva com animações suaves
-- **Navegação por Abas**: Organização clara das funcionalidades
-- **Notificações Visuais**: Feedback em tempo real das operações
-- **Modais Informativos**: Documentação integrada
+---
 
-## 📁 Estrutura do Projeto
+## 📋 Table of Contents
 
-```
-dark-souls-enhancement-suite/
-├── main.js              # Processo principal do Electron
-├── preload.js           # Script de contexto seguro
-├── index.html           # Interface principal com abas
-├── styles.css           # Estilos modernos com tema Dark Souls
-├── renderer.js          # Lógica da interface
-├── package.json         # Configurações do projeto
-└── scripts/             # Scripts PowerShell
-    ├── scan-games.ps1       # Busca jogos no sistema
-    ├── apply-fix.ps1        # Aplica correção DEP
-    ├── remove-fix.ps1       # Remove correção DEP
-    ├── check-status.ps1     # Verifica status
-    └── install-dsfix.ps1    # Instala DSFIX+Reshade
-```
+- [Overview](#-overview)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Usage Guide](#-usage-guide)
+- [Advanced Configuration](#-advanced-configuration)
+- [Troubleshooting](#-troubleshooting)
+- [Development](#-development)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-## 🚀 Como Usar
+---
 
-### Requisitos
+## 🎮 Overview
+
+The **Dark Souls PTDE Enhancement Suite** is a comprehensive toolkit designed to enhance your Dark Souls: Prepare to Die Edition experience. This all-in-one application provides registry fixes, FSR upscaling, automatic mod installation, and detailed documentation for both GFWL and SteamWorks versions.
+
+### Key Benefits
+
+- ✅ **One-click registry fixes** for compatibility issues
+- ✅ **Integrated FSR upscaling** with frame generation
+- ✅ **Automatic DSFIX+ReShade installation**
+- ✅ **GFWL vs SteamWorks documentation**
+- ✅ **Safe and reversible** modifications
+- ✅ **Modern, intuitive interface**
+
+---
+
+## ✨ Features
+
+### 🔧 Registry Fixes
+| Feature | Description | Benefit |
+|---------|-------------|---------|
+| **Steam Signature Override** | Disables Steam signature verification | Enables Steam mods and modifications |
+| **GPU Signature Override** | Enables NVIDIA/AMD signature bypass | Allows unsigned driver modifications |
+| **DEP Override** | Disables Data Execution Prevention | Improves DSFIX compatibility |
+| **Automatic Game Detection** | Scans system for Dark Souls installations | Finds games in Steam, GFWL, and custom paths |
+
+### 🖼️ FSR Overlay - Uniscaler Launcher
+| Feature | Description | Benefit |
+|---------|-------------|---------|
+| **Lossless Scaling Integration** | Launches FSR overlay application | 900p→1080p upscaling with minimal performance loss |
+| **Frame Generation** | AI-powered frame interpolation | 30→60 FPS or 60→120 FPS gameplay |
+| **Multi-API Support** | DirectX 11/12 and Vulkan compatibility | Works with various graphics configurations |
+| **Comprehensive Documentation** | Built-in setup guides | Easy configuration for optimal performance |
+
+### 💾 DSFIX+ReShade Installer
+| Feature | Description | Benefit |
+|---------|-------------|---------|
+| **Automatic Installation** | One-click mod installation | Copies all necessary files (DLLs, configs, shaders) |
+| **Automatic Backup** | Preserves original files | Safe modification with easy restoration |
+| **RTGI Support** | Experimental ray tracing setup | Enhanced visual fidelity (use with caution) |
+| **120FPS Configuration** | Physics-safe high refresh rate | High FPS without breaking game mechanics |
+
+### 🌐 Interface & Usability
+- **Dark Souls Theme**: Official game background and styling
+- **Multilingual Support**: English (default) and Portuguese Brazilian
+- **Tabbed Navigation**: Organized feature separation
+- **Real-time Feedback**: Visual notifications and progress indicators
+- **Integrated Help**: Built-in documentation and guides
+
+---
+
+## 📥 Installation
+
+### Method 1: Pre-built Installer (Recommended)
+
+1. **Download** the latest `Dark Souls Enhancement Suite Setup.exe` from [Releases](../../releases)
+2. **Run as Administrator** (required for registry modifications)
+3. **Follow the installer** prompts
+4. **Launch** from desktop shortcut or start menu
+
+### Method 2: Build from Source
+
+#### Prerequisites
 - Windows 10/11
-- Permissões de Administrador
-- Node.js (para desenvolvimento)
+- Node.js 16+ and npm
+- Git
 
-### Instalação Rápida
-1. Execute como Administrador: `npm start`
-2. Navegue pelas abas conforme necessário
-3. Para build: `npm run build-win`
+#### Build Steps
+```bash
+# Clone the repository
+git clone https://github.com/Spet001/Dark-Souls-PTDE-Enhancement-Suite.git
+cd Dark-Souls-PTDE-Enhancement-Suite
 
-### Uso das Funcionalidades
+# Install dependencies
+npm install
 
-#### Registry Fixes
-1. **Steam Override**: Aplica correção para mods Steam
-2. **GPU Override**: Habilita override para NVIDIA/AMD
-3. **DEP Override**: 
-   - Clique em "Buscar Jogos"
-   - Aplique correção para cada jogo encontrado
+# Run in development mode
+npm start
 
-#### FSR Overlay
-1. **Launch Scaler**: Inicia o Lossless Scaling
-2. **Help**: Documentação completa sobre FSR
+# Build installer
+npm run build-win
+```
 
-#### DSFIX+Reshade
-1. **Selecionar Pasta**: Escolha onde está o DATA.exe
-2. **Instalar**: Copia automaticamente todos os arquivos
-3. **Opções Avançadas**: Guias para RTGI e FSR+120FPS
+---
 
-## ⚙️ Configurações Avançadas
+## 📖 Usage Guide
 
-### RTGI Experimental
-⚠️ **USE POR SUA CONTA E RISCO - PODE QUEBRAR O JOGO!**
+### 🚀 Quick Start
 
-1. Edite `DSfix.ini`
-2. Mude `dinput8dllWrapper none` para `dinput8dllWrapper d3d9_vulkan.dll`
-3. O ReShade compilará RTGI in-game com Vulkan
-4. Com DX9 padrão, RTGI fica desabilitado
+1. **Launch as Administrator** (essential for registry modifications)
+2. **Select your task** from the three main tabs:
+   - **Registry Fixes**: System compatibility
+   - **FSR Overlay**: Performance enhancement  
+   - **DSFIX+ReShade**: Visual improvements
 
-### FSR + 120FPS sem Quebrar Física
-1. Configure o jogo em modo janela
-2. Use resolução menor que 1080p (recomendado 900p)
-3. Configure FSR para upscaling (900p → 1080p)
-4. Use 2x Frame Generation (30→60 ou 60→120 FPS)
-5. Mantenha FPS do jogo limitado a 60 no DSfix.ini
+### Tab 1: Registry Fixes
 
-## 🛡️ Segurança
+#### Steam Signature Override
+```
+Purpose: Enables Steam mods and modifications
+Usage: Click "Apply Steam Override" → Restart Steam
+Effect: Disables Steam's mod verification system
+```
 
-- **Backups Automáticos**: Arquivos originais são preservados
-- **Registro Seguro**: Apenas flags específicos são modificados
-- **Verificação**: Status pode ser verificado a qualquer momento
-- **Reversível**: Todas as alterações podem ser desfeitas
+#### GPU Signature Override  
+```
+Purpose: Allows unsigned graphics driver modifications
+Usage: Click "Apply GPU Override" → Restart system
+Effect: Enables custom graphics modifications
+```
 
-## 📋 Arquivos de Registro Utilizados
+#### DEP Override for Dark Souls
+```
+Purpose: Improves DSFIX compatibility
+Usage: 
+1. Click "Scan for Games"
+2. Select found Dark Souls installations
+3. Click "Apply DEP Fix" for each game
+4. Verify with "Check Status"
+```
 
-- `SteamSignatureOverride.reg`: Override Steam
-- `EnableSignatureOverride.reg`: Override NVIDIA/AMD
-- Scripts PowerShell para DEP: Aplicação dinâmica
+#### GFWL vs SteamWorks Guide
+Essential documentation for online play configuration based on your Dark Souls version.
 
-## 🎯 Jogos Suportados
+### Tab 2: FSR Overlay - Uniscaler
 
-- Dark Souls: Prepare to Die Edition
-- Dark Souls Remastered
-- Outros jogos com executáveis similares
+#### Launch FSR Overlay
+```
+Purpose: Start the FSR upscaling application
+Usage: Click "Launch FSR Overlay"
+Configuration: Use 900p→1080p for optimal balance
+```
 
-## 📞 Suporte
+#### Recommended Settings
+- **Resolution**: 900p input → 1080p output
+- **Frame Generation**: 2x (30→60 FPS or 60→120 FPS)  
+- **Mode**: Windowed for best compatibility
+- **Game FPS Limit**: Keep at 60 FPS max in DSfix.ini
 
-Se encontrar problemas:
+### Tab 3: DSFIX+ReShade Installation
 
-1. **Execute como Administrador** (essencial)
-2. Verifique se PowerShell permite execução de scripts
-3. Confirme que os arquivos .reg estão na pasta correta
-4. Abra uma issue no GitHub com detalhes
+#### Automatic Installation
+```
+1. Click "Select Game Folder"
+2. Navigate to your Dark Souls installation (where DATA.exe is located)
+3. Click "Install DSFIX+ReShade"
+4. Wait for completion confirmation
+```
 
-## ⚖️ Licença
+#### What Gets Installed
+- **dsfix/** folder with all configuration files
+- **reshade-shaders/** folder with visual effects
+- **d3d9.dll** (DSFIX main library)
+- **d3d9_vulkan.dll** (Vulkan wrapper for RTGI)
+- **DINPUT8.dll** (ReShade input hook)
+- **Configuration files** (.ini files for customization)
 
-MIT License - Software livre para uso pessoal e modificação.
+---
 
-## ⚠️ Aviso Legal
+## ⚙️ Advanced Configuration
 
-Este aplicativo modifica o registro do Windows e arquivos de jogos. Use por sua própria conta e risco. Sempre faça backup dos seus saves antes de usar modificações experimentais como RTGI.
+### 🌈 Experimental RTGI (Ray Tracing)
+
+> ⚠️ **WARNING**: Use at your own risk - may cause instability!
+
+#### Setup Steps
+1. Navigate to your Dark Souls installation folder
+2. Open `DSfix.ini` in a text editor
+3. Find: `dinput8dllWrapper none`
+4. Change to: `dinput8dllWrapper d3d9_vulkan.dll`
+5. Save and restart the game
+
+#### Technical Details
+- **Vulkan Wrapper**: Makes Vulkan the primary API
+- **ReShade Compilation**: RTGI compiles in-game
+- **Performance Impact**: Significant FPS reduction expected
+- **Compatibility**: May cause crashes or visual artifacts
+
+### 🏃‍♂️ Physics-Safe 120FPS Setup
+
+#### Display Configuration
+1. **Windowed Mode**: Set Dark Souls to windowed mode
+2. **Lower Resolution**: Use 900p instead of 1080p native
+3. **Alternative**: Configure 1080p → 1440p upscaling
+
+#### Recommended Settings
+- **Game FPS**: Keep DSfix limited to 60 FPS maximum
+- **FSR Frame Generation**: Handle high refresh rate externally
+- **Resolution**: 900p → 1080p for optimal balance
+- **Testing**: Monitor physics in elevators, ladders, collision detection
+
+### 🔍 Game Detection Paths
+
+The suite automatically scans these locations for Dark Souls PTDE:
+
+#### Steam Installations
+- `Steam\steamapps\common\DARK SOULS Prepare To Die Edition`
+- Multiple drive locations (C:, D:, E:, F:)
+
+#### GFWL/Games for Windows Live
+- `Microsoft Games\DARK SOULS Prepare To Die Edition`
+- `Games for Windows - LIVE\Games\DARK SOULS`
+
+#### Publisher Paths
+- `FromSoftware\DARK SOULS Prepare To Die Edition`
+- `Bandai Namco Games\DARK SOULS Prepare To Die Edition`
+
+#### Custom/Legacy Locations
+- `C:\Games\DARK SOULS*`
+- Root drive installations
+- Various naming conventions
+
+---
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### "Access Denied" or Registry Errors
+```
+Solution: Run as Administrator
+Why: Registry modifications require elevated privileges
+```
+
+#### PowerShell Execution Errors
+```
+Solution: Set execution policy
+Command: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+#### FSR Overlay Won't Launch
+```
+Verify: FSR Overlay - Uniscaler folder exists
+Check: Scaling.exe is present and not corrupted
+Solution: Reinstall or redownload the FSR overlay package
+```
+
+#### DSFIX Installation Fails
+```
+Verify: Selected folder contains DATA.exe
+Check: Sufficient disk space available
+Solution: Run as Administrator and try again
+```
+
+#### Game Not Detected in Scan
+```
+Manually navigate: Use "Select Game Folder" in DSFIX tab
+Verify location: Ensure DATA.exe is in the selected folder
+Custom path: Add your installation path to scan-games.ps1
+```
+
+### Performance Issues
+
+#### Low FPS After DSFIX Installation
+```
+1. Open DSfix.ini
+2. Set unlockFPS 0 (lock to 30 FPS)
+3. Use FSR for higher frame rates instead
+```
+
+#### FSR Overlay Performance Problems
+```
+1. Lower input resolution (try 720p)
+2. Disable frame generation temporarily  
+3. Use windowed mode instead of fullscreen
+```
+
+---
+
+## 🛠️ Development
+
+### Project Structure
+```
+dsfix-registry-manager/
+├── 📄 main.js              # Electron main process
+├── 📄 preload.js           # Secure context bridge
+├── 📄 index.html           # Main interface
+├── 📄 styles.css           # Dark Souls themed styling
+├── 📄 renderer.js          # UI logic and event handlers
+├── 📄 package.json         # Project configuration
+├── 📁 js/
+│   └── 📄 translations.js  # Multilingual support
+├── 📁 scripts/             # PowerShell automation
+│   ├── 📄 scan-games.ps1      # Game detection
+│   ├── 📄 apply-fix.ps1       # Registry modifications
+│   ├── 📄 remove-fix.ps1      # Registry restoration
+│   ├── 📄 check-status.ps1    # Status verification
+│   └── 📄 install-dsfix.ps1   # Mod installation
+└── 📁 assets/              # Icons and resources
+```
+
+### Technologies Used
+- **Electron**: Cross-platform desktop application framework
+- **Node.js**: Backend processing and file operations
+- **PowerShell**: Windows system integration
+- **HTML/CSS/JavaScript**: Modern web technologies for UI
+- **NSIS**: Windows installer creation
+
+### Building
+
+#### Development Mode
+```bash
+npm start                    # Run in development
+npm run build-win           # Build Windows installer
+```
+
+#### Release Configuration
+- **Target**: Windows 10/11
+- **Architecture**: x64
+- **Installer**: NSIS with admin privileges
+- **Dependencies**: Bundled in extraResources
+
+---
+
+## 🤝 Contributing
+
+### How to Contribute
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+### Contribution Guidelines
+
+- 🔍 **Test thoroughly** on clean Windows installations
+- 📝 **Document** new features and changes
+- 🏗️ **Follow** existing code style and structure
+- 🛡️ **Ensure** security best practices for registry modifications
+- 🌐 **Update** translations for new UI elements
+
+### Development Environment Setup
+
+```bash
+# Prerequisites
+node --version          # Verify Node.js 16+
+npm --version          # Verify npm availability
+
+# Setup
+git clone [your-fork-url]
+cd Dark-Souls-PTDE-Enhancement-Suite
+npm install
+npm start              # Launch in development mode
+```
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+### What this means:
+- ✅ **Free to use** for personal and commercial purposes
+- ✅ **Free to modify** and distribute
+- ✅ **No warranty** - use at your own risk
+- ❗ **Attribution required** - credit the original authors
+
+---
+
+## ⚠️ Legal Disclaimer
+
+This application modifies Windows registry entries and game files. While designed to be safe and reversible:
+
+- 🔄 **Always backup** your save files before using experimental features
+- 👨‍💻 **Use at your own risk** - the developers are not responsible for system issues
+- 🎮 **Game stability** may be affected by modifications
+- 🔐 **Administrator privileges** are required for proper functionality
+
+---
+
+## 🙏 Acknowledgments
+
+- **FromSoftware** - For creating the masterpiece that is Dark Souls
+- **DSFIX Community** - For the original DSFIX modifications and community support
+- **ReShade Project** - For the visual enhancement framework
+- **FSR/Uniscaler Developers** - For the upscaling technology
+- **Electron Team** - For the cross-platform application framework
+
+---
+
+<div align="center">
+
+**Made with ❤️ for the Dark Souls community**
+
+[⬆ Back to Top](#dark-souls-ptde-enhancement-suite)
+
+</div>
